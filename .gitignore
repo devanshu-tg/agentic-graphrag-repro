@@ -19,3 +19,8 @@ data/results/*
 
 # Working log: useful locally for session continuity, noise in the submission.
 PROGRESS.md
+
+# Presentation prep: notes to rehearse from, not part of the submission.
+docs/presentation-prep.md
+docs/architecture.excalidraw
+scripts/make_excalidraw.py
