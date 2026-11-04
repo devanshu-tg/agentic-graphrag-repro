@@ -1,0 +1,99 @@
+site_name: Agentic GraphRAG · Review
+site_description: >-
+  How the Agentic GraphRAG hackathon submission works, explained in plain language,
+  and what we found when we rebuilt it on our own TigerGraph Savanna workspace.
+site_author: Devanshu Saxena
+copyright: Reviewed and reproduced on TigerGraph Savanna 4.2.5 · November 2026
+
+docs_dir: docs
+site_dir: site
+# Plain .html links so the built site opens straight from disk (double-click site/index.html).
+use_directory_urls: false
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/graph-outline
+  favicon: assets/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  # Makes the built site work from file:// (including search) with no web server.
+  - offline
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/extra.css
+
+nav:
+  - Overview: index.md
+  - Understand it:
+      - The problem and the data: problem.md
+      - How it works: architecture.md
+      - The knowledge graph: graph.md
+  - The approaches:
+      - approaches/index.md
+      - 1 · RAG: approaches/rag.md
+      - 2 · GraphRAG: approaches/graphrag.md
+      - 3 · Agent without graph tools: approaches/agent-no-graph.md
+      - 4 · Event graph: approaches/event-graph.md
+      - 5 · Agentic GraphRAG: approaches/agentic-graphrag.md
+      - 6 · Jev planner: approaches/jev.md
+  - Evidence:
+      - Results: results.md
+      - How we reproduced it: reproduction.md
+  - Use it:
+      - Run it yourself: try-it.md
+      - Glossary: glossary.md
